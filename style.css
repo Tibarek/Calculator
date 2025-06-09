@@ -7,6 +7,10 @@ body {
     font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
+.display {
+    font-size: 27px;
+}
+
 .container {
     border: 1px solid #f7c2c2;
     background-color: #ffffff;
@@ -18,8 +22,8 @@ body {
 }
 
 .btn{
-    width: 60px;
-    height: 40px;
+    width: 80px;
+    height: 60px;
     border: 1px solid #0000001a;
     border-radius: 4px;
 }

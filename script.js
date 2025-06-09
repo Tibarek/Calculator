@@ -21,7 +21,6 @@ function add (addend1, addend2){
     return addend1 + addend2;
 }
 
-
 function subtract (minuend , subtrahend){
     return minuend - subtrahend;
 }
@@ -62,7 +61,7 @@ function populateDisplay(btnName){
      
 
     if(firstNum !== "" && secondNum !==  "" && operator !== ""){
-            operate(firstNum,operator,secondNum);
+        operate(+firstNum,operator,+secondNum);
     }
 
     operator = content;
@@ -78,21 +77,23 @@ function populateDisplay(btnName){
 
 function operate(operateFirstNum, op, operateSecondNum){
     if(op === "+"){
-        firstNum = add(+operateFirstNum,+operateSecondNum);
-        secondNum = "";
+        firstNum = add(operateFirstNum,operateSecondNum);
         
     } else if(op === "-") {
-        firstNum = subtract(+operateFirstNum,+operateSecondNum);
-        secondNum = "";
+        firstNum = subtract(operateFirstNum,operateSecondNum);
         
     }else if(op ==="x"){
-        firstNum = multiply(+operateFirstNum,+operateSecondNum);
-        secondNum = "";
+        firstNum = multiply(operateFirstNum,operateSecondNum);
         
     }else if(op === "/"){
-        firstNum = divide(+operateFirstNum,+operateSecondNum);
-        secondNum = "";
+        if(operateSecondNum == 0){
+            prompt("Can't divide by 0");
+            clearDisplay();
+        }else{
+            firstNum = divide(operateFirstNum,operateSecondNum);
+        }
     }
+    secondNum = "";
 
 }
 
