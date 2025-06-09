@@ -72,7 +72,7 @@ function populateDisplay(btnName){
         history.textContent = `${val} ${firstNum}`;
         clearDisplay();
     }else{
-        viewDisplay.textContent = val;
+        viewDisplay.textContent = `${firstNum} ${operator} ${secondNum}`;
     }
 }
 
