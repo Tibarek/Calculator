@@ -67,7 +67,7 @@ function populateDisplay(btnName){
     operator = content;
 }
     val += content;
-    if(content === "="){
+    if(content === "=" && firstNum !== ""){
         history.textContent = `${val} ${firstNum}`;
         clearDisplay();
     }else{
@@ -87,11 +87,14 @@ function operate(operateFirstNum, op, operateSecondNum){
         
     }else if(op === "/"){
         if(operateSecondNum == 0){
-            prompt("Can't divide by 0");
+            alert("Error: can't divide by zero");
             clearDisplay();
         }else{
             firstNum = divide(operateFirstNum,operateSecondNum);
         }
+    }
+    if(!firstNum.isInteger){
+        firstNum = Math.round(firstNum * 100) / 100
     }
     secondNum = "";
 
